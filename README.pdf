@@ -1,0 +1,33 @@
+# OS-2
+2nd assignment using semaphores
+Όνομα: Διανέλλος Στέφανος
+ΑΜ: 1115201500036
+Λειτουργικά Συστήματα
+Εργασία 2
+Σύντομη επεξήγηση:
+Ξεκινώντας το πρόγραμμα, αφού έχει πάρει τα arguments, δημιουργεί 3 διεργασίες. Οι πρώτες δύο
+διαβάζουν απο από τα αρχεία bzip.trace και gcc.trace αντίστοιχα. Μόλις πάρουν τα απαραίτητα
+δεδομένα τα περνούν στην κοινή μνήμη και τα μεταβιβάζουν στην 3η διεργασία. Η 3η διεργασία ,
+αφού λάβει τα δεδομένα από τις προηγούμενες (από μία διεργασία κάθε φορά) , ελέγχει αν αυτά
+βρίσκονται μέσα στο hashTable. Αν δεν βρίσκονται τότε τα εισάγει και ελέγχει αν θα εκτελεστεί ο
+αλγόριθμος FWF. Αν υπάρχουν τότε λαμβάνει τα επόμενα δεδομένα από τις δύο προηγούμενες
+διεργασίες.
+Το πρόγραμμα μεταγλωτίζεται με την εντολή: make.
+Η σειρά των ορισμάτων είναι η εξής: ./main <k> <number of frames> <q> <max>
+Μερικές ενδεικτικές εκτελέσεις είναι οι εξής:
+./main 8 50 32 1000
+Total disk writes: 7
+Total requests to write to disk: 9
+Total requests to read from disk: 55
+Total Page Faults: 38
+From gcc.trace read 25 entries.
+From bzip.trace read 13 entries.
+Total number of occupied frames: 8
+./main 4 100 16 1000
+Total disk writes: 2
+Total requests to write to disk: 3
+Total requests to read from disk: 29
+Total Page Faults: 19
+From gcc.trace read 13 entries.
+From bzip.trace read 6 entries.
+Total number of occupied frames: 9
